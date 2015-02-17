@@ -200,7 +200,7 @@ public class HomeActivity extends AbstractNavDrawerActivity {
 				showToast(e.getLocalizedMessage());
 			} finally {
 				if (bookSearch != null) {
-					getSupportActionBar().setSubtitle(String.format("%d eBooks found", bookSearch.getBooks().size()));
+					getSupportActionBar().setTitle(String.format("%d eBooks found", bookSearch.getBooks().size()));
 				}
 			}
 		}

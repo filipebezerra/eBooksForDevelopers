@@ -8,6 +8,9 @@ import android.os.*;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.pnikosis.materialishprogress.ProgressWheel;
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -32,7 +35,7 @@ public class BookDetailsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //handleIntent(getIntent());
+        handleIntent(getIntent());
     }
 
     private void handleIntent(Intent intent) {
@@ -41,7 +44,6 @@ public class BookDetailsActivity extends BaseActivity {
                 Uri.Builder builder = Uri.parse(END_POINT).buildUpon();
                 builder.appendPath("book");
                 builder.appendPath(String.valueOf(intent.getLongExtra(EXTRA_BOOK_ID, -1)));
-
                 doSearch(builder.toString(), TAG);
             }
         }
@@ -54,17 +56,16 @@ public class BookDetailsActivity extends BaseActivity {
 
     @Override
     protected void loadContentView() {
-		/*mBookImageView = (ImageView) findViewById(R.id.book_detail_image);
+		mBookImageView = (ImageView) findViewById(R.id.book_detail_image);
 		mBookTitleView = (TextView) findViewById(R.id.book_detail_title);
 		mBookSubtitleView = (TextView) findViewById(R.id.book_detail_subtitle);
 		mBookAuthorView = (TextView) findViewById(R.id.book_detail_author);
 		mBookPublisherView = (TextView) findViewById(R.id.book_detail_publisher);
 		mBookYearView = (TextView) findViewById(R.id.book_detail_year);
 		mBookIsbnView = (TextView) findViewById(R.id.book_detail_isbn);
-		mBookDescriptionView = (TextView) findViewById(R.id.book_detail_description);
-
+        mBookPagesView = (TextView) findViewById(R.id.book_detail_pages);
+        mBookDescriptionView = (TextView) findViewById(R.id.book_detail_description);
 		mProgressWheel = (ProgressWheel) findViewById(R.id.progress_wheel);
-		*/
     }
 
     @Override
@@ -97,14 +98,14 @@ public class BookDetailsActivity extends BaseActivity {
                 if (mBookDetail != null) {
                     mBookTitleView.setText(mBookDetail.getTitle());
                     mBookSubtitleView.setText(mBookDetail.getSubtitle());
-                    //mBookAuthorView.setText(mBookDetail.getAuthor());
-                    //mBookPublisherView.setText(mBookDetail.getPublisher());
-                    //mBookYearView.setText(mBookDetail.getYear());
-                    //mBookIsbnView.setText(mBookDetail.getIsbn());
-                    //mBookPagesView.setText(mBookDetail.getPages());
-                    //mBookDescriptionView.setText(mBookDetail.getDescription());
+                    mBookAuthorView.setText(mBookDetail.getAuthor());
+                    mBookPublisherView.setText(mBookDetail.getPublisher());
+                    mBookYearView.setText(mBookDetail.getYear());
+                    mBookIsbnView.setText(mBookDetail.getIsbn());
+                    mBookPagesView.setText(mBookDetail.getPages());
+                    mBookDescriptionView.setText(mBookDetail.getDescription());
 
-                    //Picasso.with(mBookImageView.getContext()).load(mBookDetail.getImage()).into(mBookImageView);
+                    Picasso.with(mBookImageView.getContext()).load(mBookDetail.getImage()).into(mBookImageView);
 
                     getSupportActionBar().setTitle(mBookDetail.getTitle());
                 }
