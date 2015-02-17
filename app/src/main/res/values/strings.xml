@@ -1,3 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">eBooks For Developers</string>
+
+    <string name="app_name">
+		eBooks For Developers
+	</string>
+	
+	<string name="action_search">
+		Example: php mysql
+	</string>
+	
+	<string name="search_hint">
+		@string/action_search
+	</string>
+	
+	<string name="desc_list_item_icon">
+		Item Icon
+	</string>
+	
+	<string name="drawer_title_opened">
+		@string/app_name
+	</string>
+	
+    <string name="drawer_title_closed">
+		@string/app_name
+	</string>
+	
+	<string name="drawer_section_user_stuffs">
+		YOUR STUFFS
+	</string>
+	
+	<string name="drawer_item_user_favorite_ebooks">
+		Favorite eBooks
+	</string>
+	
+	<string name="drawer_section_ebook_categories">
+		EBOOK CATEGORIES
+	</string>
+	
+	<string name="drawer_item_top_download_ebooks">
+		Top Download eBooks
+	</string>
+	
+	<string name="drawer_item_last_upload_ebooks">
+		Last Upload eBooks
+	</string>
+	
+	<string name="drawer_item_new_ebooks">
+		New eBooks
+	</string>
+	
+    
 </resources>
